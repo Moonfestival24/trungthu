@@ -177,3 +177,24 @@ document.addEventListener("click", (e) => {
   }
 });
 
+document.addEventListener("pointerdown", function startMusicOnce() {
+    if (!musicStarted && bg) {
+        bg.volume = 0;
+        bg.play().then(() => {
+            let v = 0;
+            const fadeIn = setInterval(() => {
+                v += 0.05;
+                if (v >= 0.9) {
+                    v = 0.9;
+                    clearInterval(fadeIn);
+                }
+                bg.volume = v;
+            }, 120);
+            musicStarted = true;
+        }).catch((e) => {
+            console.log("Không thể phát nhạc:", e);
+        });
+    }
+    document.removeEventListener("pointerdown", startMusicOnce);
+});
+
