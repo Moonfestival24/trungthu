@@ -20,6 +20,7 @@
             margin: 0;
             font-family: "Mali", cursive;
             background: #060614;
+            overflow: hidden;
         }
 
         .stage {
@@ -34,21 +35,22 @@
             height: 100%;
         }
 
-.moon {
-    position: fixed;
-    top: 40px;
-    right: 60px;
-    width: 120px;
-    height: 120px;
-    background: radial-gradient(circle at 30% 30%, #fff9d9 0%, #fff1b5fd 45%, #ffe699de 100%);
-    border-radius: 50%;
-    box-shadow:
-        0 0 30px rgba(255, 245, 180, 0.8),
-        0 0 60px rgba(255, 230, 120, 0.5),
-        0 0 80px rgba(255, 230, 120, 0.5);
-    pointer-events: none;
-    z-index: 2;
-}
+        .moon {
+            position: absolute;
+            top: 60px;
+            right: 100px;
+            width: 160px;
+            height: 160px;
+            background: radial-gradient(circle at 30% 30%, #fff, #f8f8f8 70%, #e0e0e0 100%);
+            border-radius: 50%;
+            box-shadow:
+                0 0 70px #ffffff7a,
+                0 0 100px rgba(255, 255, 255, 0.7),
+                0 0 160px rgba(255, 255, 255, 0.4);
+            filter: drop-shadow(0 0 25px rgba(255, 255, 200, 0.8));
+            animation: moonGlow 6s ease-in-out infinite;
+            z-index: 10;
+        }
 
         @media (max-width:600px) {
             .moon {
@@ -150,7 +152,6 @@
             box-shadow:
                 0 0 20px #ff8a50,
                 0 0 25px #ffd180;
-
         }
 
         @media (max-width: 600px) {
@@ -202,7 +203,6 @@
                 height: 20px;
             }
         }
-
     </style>
 </head>
 
@@ -221,7 +221,7 @@
         </div>
 
         <!-- Hint -->
-        <div id="hint">Chạm vào đèn trời</div>
+        <div id="hint"></div>
 
         <!-- Nhạc nền -->
         <audio id="bg-music" loop>
@@ -231,7 +231,8 @@
     </div>
 
     <!-- Script JS -->
-    <script src="./script.js"></script>
+    <script src="script.js?v=1"></script>
+
 </body>
 
 </html>

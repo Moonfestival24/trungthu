@@ -84,10 +84,8 @@ loop();
 // ===== Đèn lồng và lời chúc =====
 const lanternContainer = document.getElementById("lantern-container");
 const wishes = [
-  "Tớ chúc mọi điều tốt đẹp nhất đến với cậu.",
-  "Trăng tròn rồi, tớ chỉ muốn nắm tay cậu.",
-  "Cậu làm tim tớ rung rinh mỗi lần cười.",
-  "Có cậu cạnh bên, mùa trăng nào cũng đặc biệt."
+  "中秋佳节愿你花好月圆，心中梦圆，左右逢源，生活一年胜一年。",
+  "祝你开心无论身在何方，阖家幸福，月满人团圆！"
 ];
 
 function createLantern() {
@@ -179,12 +177,3 @@ document.addEventListener("click", (e) => {
   }
 });
 
-window.addEventListener("DOMContentLoaded", () => {
-  // Hiển thị hint 1 lần
-  hint.style.opacity = "1";
-
-  // Ẩn sau 5 giây
-  setTimeout(() => {
-    hint.style.opacity = "0";
-  }, 3000);
-});
